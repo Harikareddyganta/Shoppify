@@ -3,9 +3,9 @@ import './Listproduct.css'
 import crossicon from '../../Assets/cross_icon.png'
 const Listproduct = () => {
   const [allproducts,setallproducts]=useState([]);
-
+  const url="https://shoppify-backend-x2xq.onrender.com";
   const fetchinfo=async()=>{
-    await fetch('http://localhost:4000/allProduct').then((res)=>res.json())
+    await fetch(`${url}/allProduct`).then((res)=>res.json())
     .then((data)=>(setallproducts(data)));
   }
 
@@ -15,7 +15,7 @@ const Listproduct = () => {
   },[])
 
   const removeproduct=async(id)=>{
-    await fetch('http://localhost:4000/removeProduct',{
+    await fetch(`${url}/removeProduct`,{
       method:"POST",
       headers:{
         Accept:'application/json',
