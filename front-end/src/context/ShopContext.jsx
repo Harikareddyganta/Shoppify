@@ -10,6 +10,7 @@ const getDefaulCart = () => {
 };
 
 const ShopContextProvider = (props) => {
+  const url="https://shoppify-backend-x2xq.onrender.com";
   const [all_products, setall_products] = useState([]);
   const [cartItem, setcartItem] = useState(getDefaulCart());
   const url="https://shoppify-backend-x2xq.onrender.com";
