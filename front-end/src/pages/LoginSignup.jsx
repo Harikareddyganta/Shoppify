@@ -17,7 +17,7 @@ const LoginSignup = () => {
     console.log("login executed",formdata);
 
     let responsedata;
-    await fetch('https://shoppify-backend-x2xq.onrender.com/login',{
+    await fetch("https://shoppify-backend-x2xq.onrender.com/login",{
       method:"POST",
       headers:{
         accept:'application/form-data',
@@ -38,7 +38,7 @@ const LoginSignup = () => {
     console.log("signup executed",formdata);
 
     let responsedata;
-    await fetch('https://shoppify-backend-x2xq.onrender.com/signup',{
+    await fetch("https://shoppify-backend-x2xq.onrender.com/signup",{
       method:"POST",
       headers:{
         accept:'application/form-data',
