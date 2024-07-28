@@ -4,6 +4,7 @@ import upload_area from "../../Assets/upload_area.svg";
 import { useState } from "react";
 const Addproduct = () => {
   const [image, setimage] = useState(false);
+  const url = "https://shoppify-backend-x2xq.onrender.com";
   const [productdetails, setproductdetails] = useState({
     name: "",
     image: "",
@@ -26,7 +27,7 @@ const Addproduct = () => {
     let product = productdetails;
     let formdata = new FormData();
     formdata.append("product", image);
-    await fetch("http://localhost:4000/upload", {
+    await fetch(`${url}/upload`, {
       method: "POST",
       headers: { Accept: "application/json" }, //it says the client prefers json responce
       body: formdata,
@@ -39,7 +40,7 @@ const Addproduct = () => {
     if (responseData.success) {
       product.image = responseData.image_url;
       console.log(product);
-      await fetch("http://localhost:4000/addProduct", {
+      await fetch(`${url}/addProduct`, {
         method: "POST",
         headers: {
           Accept: "application/json",
