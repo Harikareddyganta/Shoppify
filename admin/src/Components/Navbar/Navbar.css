@@ -1,0 +1,33 @@
+.admin-logo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 60px;
+    box-shadow: 0px 1px 3px -2px #000;
+    margin-bottom: 1px;
+    background: white;
+}
+.navlogo{
+    width: 200px;
+}
+@media(max-width:800px){
+    .admin-logo{
+        flex-direction: row;
+    }
+    .navbar{
+        padding: 15px 30px;
+    }
+    .navlogo{
+        width: 150px;
+    }
+    .navprofile{
+        width: 40px;
+    }
+}
+
