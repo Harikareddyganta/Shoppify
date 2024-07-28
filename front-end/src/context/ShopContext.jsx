@@ -12,14 +12,14 @@ const getDefaulCart = () => {
 const ShopContextProvider = (props) => {
   const [all_products, setall_products] = useState([]);
   const [cartItem, setcartItem] = useState(getDefaulCart());
-
+  const url="https://shoppify-backend-x2xq.onrender.com";
   useEffect(() => {
-    fetch("http://localhost:4000/allProduct")
+    fetch(`${url}/allProduct`)
       .then((response) => response.json())
       .then((data) => setall_products(data));
 
     if (localStorage.getItem("auth-token")) {
-      fetch("http://localhost:4000/getcart", {
+      fetch(`${url}/getcart`, {
         method: "POST",
         headers: {
           Accept: "application/form-data",
@@ -36,7 +36,7 @@ const ShopContextProvider = (props) => {
   const addToCart = (itemId) => {
     setcartItem((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
     if (localStorage.getItem("auth-token")) {
-      fetch("http://localhost:4000/addtocart", {
+      fetch(`${url}/addtocart`, {
         method: "POST",
         headers: {
           Accept: "application/form-data",
@@ -53,7 +53,7 @@ const ShopContextProvider = (props) => {
   const removeFromCart = (itemId) => {
     setcartItem((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
     if (localStorage.getItem("auth-token")) {
-      fetch("http://localhost:4000/removefromcart", {
+      fetch(`${url}/removefromcart`, {
         method: "POST",
         headers: {
           Accept: "application/form-data",
